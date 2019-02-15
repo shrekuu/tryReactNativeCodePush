@@ -40,9 +40,7 @@ class App extends Component<Props> {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>
-          If I see this, CodePush works for me!
-        </Text>
+        <Text style={styles.welcome}>This is the 5th time.</Text>
         <TouchableOpacity onPress={this.onButtonPress}>
           <Text>Check for updates</Text>
         </TouchableOpacity>
