@@ -13,19 +13,23 @@ import {
   StyleSheet,
   Text,
   View,
-  TouchableOpacity
+  TouchableOpacity,
+  Alert
 } from "react-native";
 import codePush from "react-native-code-push";
 
-const instructions = Platform.select({
-  ios: "Press Cmd+R to reload,\n" + "Cmd+D or shake for dev menu",
-  android:
-    "Double tap R on your keyboard to reload,\n" +
-    "Shake or press menu button for dev menu"
-});
-
 type Props = {};
 class App extends Component<Props> {
+  componentDidMount() {
+    codePush.checkForUpdate().then(update => {
+      if (!update) {
+        Alert.alert("The app is up to date!");
+      } else {
+        Alert.alert("An update is available! Should we download it?");
+      }
+    });
+  }
+
   onButtonPress() {
     codePush.sync({
       updateDialog: true,
