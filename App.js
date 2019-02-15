@@ -40,7 +40,7 @@ class App extends Component<Props> {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>This is the 13th time.</Text>
+        <Text style={styles.welcome}>This is the 14th time.</Text>
         <TouchableOpacity onPress={this.onButtonPress}>
           <Text>Check for updates</Text>
         </TouchableOpacity>
